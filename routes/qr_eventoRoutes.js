@@ -5,7 +5,6 @@ const qrEventoController = require('../controllers/qr_evento.controller');
 // CRUD Básico
 router.get('/', qrEventoController.listarQrEventos);
 router.post('/', qrEventoController.crearQrEvento);
-router.get('/', qrEventoController.listarQrEventos);
 router.get('/:id', qrEventoController.obtenerQrEvento);
 router.put('/:id', qrEventoController.actualizarQrEvento);
 router.patch('/:id/inactivar', qrEventoController.inactivarQrEvento);

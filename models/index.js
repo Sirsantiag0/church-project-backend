@@ -111,6 +111,7 @@ module.exports = {
     Estado_servicio,
     Eventos,
     Feligres,
+    Grupos,
     Hoja_dominical,
     Qr_evento,
     Servicios,

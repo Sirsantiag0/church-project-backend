@@ -18,7 +18,7 @@ exports.listarQrEventos = async (req, res) => {
             include: [{
                 model: db.Eventos,
                 as: 'evento',
-                attributes: ['nombre', 'fecha']
+                attributes: ['descripcion', 'fecha']
             }]
         });
         res.status(200).json({ success: true, data: qrs });
@@ -35,7 +35,7 @@ exports.obtenerQrEvento = async (req, res) => {
             include: [{
                 model: db.Eventos,
                 as: 'evento',
-                attributes: ['nombre', 'fecha']
+                attributes: ['descripcion', 'fecha']
             }]
         });
         if (qr) {
@@ -102,7 +102,7 @@ exports.obtenerQrPorEvento = async (req, res) => {
             include: [{
                 model: db.Eventos,
                 as: 'evento',
-                attributes: ['nombre', 'fecha']
+               attributes: ['descripcion', 'fecha']
             }]
         });
         if (qr) {
@@ -123,7 +123,7 @@ exports.validarQr = async (req, res) => {
             include: [{
                 model: db.Eventos,
                 as: 'evento',
-                attributes: ['id', 'nombre', 'fecha']
+                attributes: ['id', 'descripcion', 'fecha']
             }]
         });
         
