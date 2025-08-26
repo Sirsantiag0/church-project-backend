@@ -100,7 +100,7 @@ exports.obtenerQrPorEvento = async (req, res) => {
         const qr = await Qr_evento.findOne({ 
             where: { id_evento: eventoId },
             include: [{
-                model: db.Evento,
+                model: db.Eventos,
                 as: 'evento',
                 attributes: ['nombre', 'fecha']
             }]

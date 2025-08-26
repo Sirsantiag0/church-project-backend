@@ -7,6 +7,7 @@ const sequelize = new Sequelize(
     config.password,
     config
 )
+
 // import models
 const Archivos_evento = require('./archivos_evento')(sequelize, Sequelize.DataTypes);
 const Archivos_grupo = require('./archivos_grupo')(sequelize, Sequelize.DataTypes);
@@ -23,7 +24,7 @@ const Hoja_dominical = require('./hoja_dominical')(sequelize, Sequelize.DataType
 const Qr_evento = require('./qr_evento')(sequelize, Sequelize.DataTypes);
 const Servicios = require('./servicios')(sequelize, Sequelize.DataTypes);
 const Suscripcion_curso = require('./suscripcion_curso')(sequelize, Sequelize.DataTypes);
-const Suscripcion_grupo = require('./Suscripcion_grupo')(sequelize, Sequelize.DataTypes);
+const Suscripcion_grupo = require('./suscripcion_grupo')(sequelize, Sequelize.DataTypes);
 const Tipo = require('./tipo')(sequelize, Sequelize.DataTypes);
 
 // Definir relaciones
@@ -67,10 +68,8 @@ Archivos_evento.belongsTo(Eventos, {foreignKey: 'id_evento'})
 Eventos.hasMany(Archivos_evento, {foreignKey: 'id_evento'})
 
 // Archivos_grupo
-Archivos_grupo.belongsTo(Eventos, {foreignKey: 'id_grupo'})
-Eventos.hasMany(Archivos_grupo, {foreignKey: 'id_grupo'})
-
-
+Archivos_grupo.belongsTo(Grupos, {foreignKey: 'id_grupo'})
+Grupos.hasMany(Archivos_grupo, {foreignKey: 'id_grupo'})
 
 // Asistencia_evento
 Asistencia_evento.belongsTo(Feligres, {foreignKey: 'id_feligres'})
